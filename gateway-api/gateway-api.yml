@@ -1,22 +1,24 @@
 spring:
   cloud:
     gateway:
-      default-filters:
-        - RemoveHopByHopHeaders=keep-alive,transfer-encoding,connection,upgrade,proxy-authenticate,proxy-authorization,te,trailer,proxy-connection
-      routes:
-        - id: catalog-api
-          uri: http://localhost:8081
-          predicates:
-            - Path=/catalog/**
-          filters:
-            - StripPrefix=1
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowedOrigins: "*"
-            allowedMethods: "*"
-            allowedHeaders: "*"
-            allowCredentials: false
+      server:
+        webflux:
+          default-filters:
+            - RemoveHopByHopHeaders=keep-alive,transfer-encoding,connection,upgrade,proxy-authenticate,proxy-authorization,te,trailer,proxy-connection
+          routes:
+            - id: catalog-api
+              uri: http://localhost:8081
+              predicates:
+                - Path=/catalog/**
+              filters:
+                - StripPrefix=1
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowedOrigins: "*"
+                allowedMethods: "*"
+                allowedHeaders: "*"
+                allowCredentials: false
 
 management:
   endpoints:
