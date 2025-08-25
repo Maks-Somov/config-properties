@@ -3,8 +3,6 @@ spring:
     gateway:
       server:
         webflux:
-          default-filters:
-            - RemoveHopByHopHeaders=keep-alive,transfer-encoding,connection,upgrade,proxy-authenticate,proxy-authorization,te,trailer,proxy-connection
           routes:
             - id: catalog-api
               uri: http://localhost:8081
