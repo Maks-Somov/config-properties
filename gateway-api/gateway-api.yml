@@ -4,7 +4,7 @@ spring:
       server:
         webflux:
           routes:
-            - id: catalog-api
+            - id: product-api
               uri: http://localhost:8081
               predicates:
                 - Path=/product/**
