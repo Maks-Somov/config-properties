@@ -7,7 +7,7 @@ spring:
             - id: catalog-api
               uri: http://localhost:8081
               predicates:
-                - Path=/catalog/**
+                - Path=/product/**
               filters:
                 - StripPrefix=1
           globalcors:
