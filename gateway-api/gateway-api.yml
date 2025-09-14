@@ -5,7 +5,7 @@ spring:
         webflux:
           routes:
             - id: product-api
-              uri: http://product-api:8081
+              uri: http://product-api:8080
               predicates:
                 - Path=/product/**
               metadata:
