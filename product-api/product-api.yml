@@ -1,0 +1,17 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, beans, health, prometheus, gateway
+  tracing:
+    sampling:
+      probability: 1.0
+    propagation:
+      type: w3c,b3
+    baggage:
+      remote-fields: correlation-id,user-id
+      correlation:
+        enabled: true
+  otlp:
+    tracing:
+      endpoint: ${OTLP_ENDPOINT}
