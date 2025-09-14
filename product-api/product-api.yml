@@ -14,4 +14,4 @@ management:
         enabled: true
   otlp:
     tracing:
-      endpoint: ${OTLP_ENDPOINT:http://otel-collector:4318/v1/traces}
+      endpoint: ${OTLP_ENDPOINT:http://localhost:4318/v1/traces}
