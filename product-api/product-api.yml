@@ -19,3 +19,11 @@ management:
   otlp:
     tracing:
       endpoint: ${OTLP_ENDPOINT:http://localhost:4318/v1/traces}
+
+resilience4j:
+  ratelimiter:
+    instances:
+      getProductLimiter:
+        limit-for-period: 10
+        limit-refresh-period: 5s
+        timeout-duration: 5s
