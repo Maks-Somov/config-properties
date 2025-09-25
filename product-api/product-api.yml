@@ -7,6 +7,8 @@ management:
     export:
       prometheus:
         enabled: true
+    tags:
+      app: product-api
   tracing:
     sampling:
       probability: 1.0
